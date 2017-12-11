@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h2=title
+    p <b>#{name}</b>
+    p <b>#{email}</b>
+    p <b>#{comments}</b>
+    form(method="post" action="/form")
+        p name 
+        input(type="text" name="name")
+        br
+        p email
+        input(type="text" name="email")
+        br
+        p comments
+        input(type="textarea" name="comments")
+        br
+        input(type="submit")
+    br
+    a(href="/") index PAGE
+    br
+    a(href="/form") FORM PAGE
+    br
+    a(href="/about") about PAGE

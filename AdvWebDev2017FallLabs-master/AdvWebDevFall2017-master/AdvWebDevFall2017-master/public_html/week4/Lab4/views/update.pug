@@ -1,0 +1,37 @@
+extends layout
+
+block content
+ h1=title
+ p
+    a(href="../view") View
+ h2=message
+ form(action="/update", method="post", role="form")
+        .form-group
+          label.control-label(for="firstName") First Name
+          .col
+            input#name.form-control(name="firstName" value=results.firstName)
+        .form-group
+          label.control-label(for="lastName") Last Name
+          .col
+            input#name.form-control(name="lastName" value=results.lastName)
+        .form-group
+          label.control-label(for="jobTitle") Job Title
+          .col
+            input#name.form-control(name="jobTitle" value=results.jobTitle)
+        .form-group
+          label.control-label(for="department") Department
+          .col
+            select#department.form-control.input-sm(name="department")
+              option(selected=results.rating == "HR") HR
+              option(selected=results.rating == "IT") IT
+              option(selected=results.rating == "EndUser") EndUser
+        .form-group
+          label.control-label(for="startDate") Start Date
+          .col
+            input#name.form-control(name="startDate" value=results.startDate.toDateString())
+        .form-group
+          label.control-label(for="salary") Salary
+          .col
+            input#name.form-control(name="salary" value=results.salary)
+        input(type="hidden" name="_id" value=results._id)
+        input(type="submit" value="Update my employee") 
